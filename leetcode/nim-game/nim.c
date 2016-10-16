@@ -20,18 +20,27 @@
  */
 
 #include <stdio.h>
+#include <stdbool.h>
+
+bool canWinNim(int n);
 
 int
 main(int argc, char const *argv[])
 {
-    /* code */
+    bool can_win;
+
+    can_win = canWinNim(1);
+    printf("%d\n", can_win);
+
     return 0;
 }
 
 /* === solution === */
 
-bool canWinNim(int n) {
-    
+bool
+canWinNim(int n) {
+    if (!( n % 4 )) return false;
+    else return true;
 }
 
 /* === EOS === */
