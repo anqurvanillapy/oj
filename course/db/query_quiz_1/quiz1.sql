@@ -1,3 +1,5 @@
 SELECT DISTINCT SNO
 FROM SPJ
 WHERE JNO = 'J1';
+
+# => [('S1', 'S2', 'S3', 'S5', 'S4')]

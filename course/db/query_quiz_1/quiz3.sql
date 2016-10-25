@@ -1,0 +1,7 @@
+SELECT DISTINCT SNO
+FROM P, SPJ
+WHERE P.PNO = SPJ.PNO
+AND JNO = 'J1'
+AND COLOR = '红';
+
+# => [('S1', 'S3')]

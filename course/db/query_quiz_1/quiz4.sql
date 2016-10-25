@@ -1,0 +1,11 @@
+SELECT DISTINCT JNO
+FROM SPJ WHERE JNO NOT IN (
+    SELECT JNO
+    FROM S, P, SPJ
+    WHERE P.PNO = SPJ.PNO
+    AND S.SNO = SPJ.SNO
+    AND COLOR <> '红'
+    AND CITY <> '天津'
+);
+
+# => [('J3')]
