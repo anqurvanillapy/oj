@@ -2,7 +2,7 @@ query quiz 1
 ============
 
 *This problem set was originally in Chinese, from Chpater 2 of __Introduction to
-Database System__ (Edition 4, Wang Shan and Sa Shixuan).*
+Database Systems__ (Edition 4, Wang Shan and Sa Shixuan).*
 
 Description (zh-CN)
 -------------------
