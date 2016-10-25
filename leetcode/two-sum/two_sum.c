@@ -21,17 +21,13 @@ main(int argc, char const *argv[])
 {
     int nums[ARRSIZE] = {3, 2, 4};
     int numsSize = ARRSIZE;
-    int target = 6;
+    int target = 1;
     int *result = NULL;
     int i;
 
     result = twoSum(nums, numsSize, target);
-    if (result != NULL) {
-        printf("{%d, %d}\n", result[0], result[1]);
-        free(result);
-    } else {
-        printf("result is NULL\n");
-    }
+    printf("{%d, %d}\n", result[0], result[1]);
+    free(result);
 
     return 0;
 }
