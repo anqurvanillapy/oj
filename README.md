@@ -16,5 +16,6 @@ problem sets, quizzes, whatever. Sources include:
 License
 -------
 
-None, for **BadCodeAlert**, sometimes **PEBKAC**. Anyway, I would be really
-grateful if anyone could give me advice, and wish I could make it better :)
+None, for **BadCodeAlert**, sometimes **PEBKAC**/**ID-10T Error**. Anyway, I
+would be really grateful if anyone could give me advice, and wish I could make
+it better :)
