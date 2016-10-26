@@ -28,15 +28,13 @@ main(int argc, char const *argv[])
 int
 getSum(int a, int b)
 {
-    int i, j, oi, oj, x, y;
-    int max, carry, offset, sum;
+    int i, j, x, y;
+    int carry, offset, sum;
 
     i = a; j = b;
     carry = offset = sum = 0;
-    max = i > j ? i : j;
     do {
-        oi = i >> offset; oj = j >> offset;
-        x = oi & 1; y = oj & 1;
+        x = i >> offset & 1; y = j >> offset & 1;
         sum = sum | ((carry ^ x ^ y) << offset);
         carry = (carry & x) | (carry & y) | (x & y);
         offset++;
