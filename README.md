@@ -9,6 +9,7 @@ probset
 problem sets, quizzes, whatever. Sources include:
 - Assignment of my courses
 - Online judge
+- Some meh code grabbed from books
 - me_irl
 - PoC or gtfo, yep I mean literally
 - etc. They've been dumb enough
