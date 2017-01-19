@@ -54,7 +54,8 @@ main(int argc, const char *argv[])
 
 /* === solution === */
 
-bool hasCycle(struct ListNode *head)
+bool
+hasCycle(struct ListNode *head)
 {
     if (head == NULL || head->next == NULL)
         return false;
