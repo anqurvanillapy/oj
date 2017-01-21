@@ -38,7 +38,8 @@ main(int argc, char const *argv[])
 /* === solution === */
 
 bool
-canWinNim(int n) {
+canWinNim(int n)
+{
     if (!( n % 4 )) return false;
     else return true;
 }
