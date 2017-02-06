@@ -39,11 +39,11 @@ main(int argc, const char *argv[])
 bool
 isHappy(int n)
 {
-    int squares_table[192];
+    int squares_table[162];
     int m;
     int rem, sum;
 
-    for (m = 0; m < 192; ++m) squares_table[m] = 0;
+    for (m = 0; m < 162; ++m) squares_table[m] = 0;
 
     m = n;
     for (;;) {
@@ -56,7 +56,7 @@ isHappy(int n)
             if (m == 0) {
                 if (sum == 1) return true;
 
-                if (sum < 192) {
+                if (sum < 162) {
                     if (squares_table[sum] == 1) return false;
                     else squares_table[sum] = 1;
                 }
