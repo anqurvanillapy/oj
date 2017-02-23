@@ -5,7 +5,7 @@ probset
 
 ~~Okay, im tryna deal with 'em fgs.~~
 
-**probset**, namely *problem set*, is a randumb repository for my resolutions of
+**probset**, namely *problem set*, is a randumb repository of my solutions for
 problem sets, quizzes, whatever. Sources include:
 - Assignment of my courses
 - Online judge
