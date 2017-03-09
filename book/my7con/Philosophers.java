@@ -23,12 +23,18 @@
 public class Philosophers {
     public static void main(String[] args) throws InterruptedException {
         Chopstick[] chops = new Chopstick[5];
-        Philosopher[] philos = new Philosopher[5];
+
+        // 1. Dead lock.
+        // Philosopher[] philos = new Philosopher[5];
+
+        // 2. Solution that uses numbered chopsticks to pick up in some order.
+        PhilosopherOrdered[] philos = new PhilosopherOrdered[5];
 
         for (int i = 0; i < 5; ++i) chops[i] = new Chopstick(i);
 
         for (int i = 0; i < 5; ++i) {
-            philos[i] = new Philosopher(chops[i], chops[(i + 1) % 5]);
+            // philos[i] = new Philosopher(chops[i], chops[(i + 1) % 5]);
+            philos[i] = new PhilosopherOrdered(chops[i], chops[(i + 1) % 5]);
             philos[i].start();
         }
 

@@ -22,6 +22,7 @@ public class Philosopher extends Thread {
             while (true) {
                 System.out.println(this + " thinking...");
                 Thread.sleep(random.nextInt(1000));
+
                 System.out.println(this + " picks left");
                 synchronized(left) {
                     System.out.println(this + " picks right");
