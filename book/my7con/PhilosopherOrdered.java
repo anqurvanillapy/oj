@@ -19,8 +19,8 @@ public class PhilosopherOrdered extends Thread {
         } else {
             first = right;
             second = left;
-        } 
-        random = new Random();        
+        }
+        random = new Random();
     }
 
     public void run() {
