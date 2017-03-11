@@ -51,7 +51,7 @@ def gen_ifib(n):
 
 
 # It won't print anything if not converted into a list.
-list(map(lambda x: print('v={}, cnt={}'.format(x(7), x.called)),
+list(map(lambda x: print('v={}, cnt={}, ms={}'.format(x(35), x.cnt, x.ms)),
          [rfib, rfib1, ifib]))
 
 # Mechanism of a generator is different.
