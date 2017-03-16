@@ -29,6 +29,9 @@ def rfib1(n):
         ret = rfib1(n - 1) + rfib1(n - 2)
         kvs[n] = ret
         return ret
+        
+        # Interesting that it doesn't work.
+        # return kvs.setdefault(n, rfib1(n - 1) + rfib1(n - 2))
     return 1
 
 
@@ -52,7 +55,7 @@ def gen_ifib(n):
 
 
 # It won't print anything if not converted into a list.
-list(map(lambda x: print('v={}, cnt={}, ms={}'.format(x(35), x.cnt, x.ms)),
+list(map(lambda x: print('v={}, cnt={}, ms={}'.format(x(30), x.cnt, x.ms)),
          [rfib, rfib1, ifib]))
 
 # Mechanism of a generator is different.
