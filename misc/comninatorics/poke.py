@@ -9,7 +9,7 @@ ALL = 52
 
 
 def get_ev(n, m):
-    """Pick n from m."""
+    """Get expected value of picking n from m."""
     ret = 0
     for i in range(n):
         ret += permute(n, i + 1) / permute(m, i + 1)
@@ -25,9 +25,9 @@ def permute(n, k):
     except: pass
 
     if k < 2: return n
-    else:
-        ret = n
-        ret *= permute(n - 1, k - 1)
+
+    ret = n
+    ret *= permute(n - 1, k - 1)
     cache[(n, k)] = ret
     return ret
 
