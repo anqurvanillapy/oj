@@ -7,7 +7,6 @@
     traversals.
 """
 
-
 class _Node:
     def __init__(self, v, l, r):
         self.value = v
