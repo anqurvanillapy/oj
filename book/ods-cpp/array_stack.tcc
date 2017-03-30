@@ -1,8 +1,8 @@
 namespace myods {
 
 template <class T> inline
-T
-array_stack<T>::get(int i) const
+T const
+array_stack<T>::get(int i)
 {
     return arr[i];  // already has bounds-checking
 }
@@ -20,13 +20,13 @@ template <class T>
 void
 array_stack<T>::add(int i, T v)
 {
-    if (n + 1 > arr.size()) resize();   // growing
+    if (top + 1 > arr.size()) resize();   // growing
     
     // Copy the data from i to n.
-    for (int j = n; j > i; --j) arr[j] = arr[j - 1];
+    for (int j = top; j > i; --j) arr[j] = arr[j - 1];
     
     arr[i] = v;
-    n++;
+    top++;
 }
 
 template <class T>
@@ -34,9 +34,9 @@ T
 array_stack<T>::remove(int i)
 {
     T ret = arr[i];
-    for (int j = i; j < n - 1; ++j) arr[j] = arr[j + 1];
-    n--;
-    if (arr.size() >= 3 * n) resize();  // shrinking
+    for (int j = i; j < top - 1; ++j) arr[j] = arr[j + 1];
+    top--;
+    if (arr.size() >= 3 * top) resize();  // shrinking
     return ret;
 }
 
@@ -45,7 +45,7 @@ template <class T> inline
 void
 array_stack<T>::push(T v)
 {
-    add(n, v);
+    add(top, v);
 }
 
 /// XXX: Not on the book.
@@ -53,7 +53,7 @@ template <class T> inline
 T
 array_stack<T>::pop()
 {
-    return remove(std::max(n - 1, 0));
+    return remove(std::max(top - 1, 0));
 }
 
 template <class T>
@@ -61,8 +61,8 @@ void
 array_stack<T>::resize()
 {
     // Grows doubly or shrinks 1/3.
-    array<T> a(std::max(2 * n, 1));
-    for (int i = 0; i < n; ++i) a[i] = arr[i];
+    array<T> a(std::max(2 * top, 1));
+    for (int i = 0; i < top; ++i) a[i] = arr[i];
     arr = a;
 }   // array<T> a would be free for it is automatic
 
