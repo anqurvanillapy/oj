@@ -60,36 +60,4 @@ array_deque<T>::remove(int i)
     return ret;
 }
 
-/// XXX: Not on the book.
-template <class T>
-void
-array_deque<T>::enqueue(T v)
-{
-    add(n, v);
-}
-
-/// XXX: Not on the book.
-template <class T>
-T
-array_deque<T>::dequeue()
-{
-    return remove(0);
-}
-
-/// XXX: Not on the book.
-template <class T>
-void
-array_deque<T>::push(T v)
-{
-    add(n, v);
-}
-
-/// XXX: Not on the book.
-template <class T>
-T
-array_deque<T>::pop()
-{
-    return remove(std::max(n - 1, 0));
-}
-
 } /* myods */

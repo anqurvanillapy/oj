@@ -40,6 +40,16 @@ array_stack<T>::remove(int i)
     return ret;
 }
 
+template <class T>
+void
+array_stack<T>::resize()
+{
+    // Grows doubly or shrinks 1/3.
+    array<T> a(std::max(2 * top, 1));
+    for (int i = 0; i < top; ++i) a[i] = arr[i];
+    arr = a;
+}   // array<T> a would be free for it is automatic
+
 /// XXX: Not on the book.
 template <class T> inline
 void
@@ -55,15 +65,5 @@ array_stack<T>::pop()
 {
     return remove(std::max(top - 1, 0));
 }
-
-template <class T>
-void
-array_stack<T>::resize()
-{
-    // Grows doubly or shrinks 1/3.
-    array<T> a(std::max(2 * top, 1));
-    for (int i = 0; i < top; ++i) a[i] = arr[i];
-    arr = a;
-}   // array<T> a would be free for it is automatic
 
 } /* namespace myods */

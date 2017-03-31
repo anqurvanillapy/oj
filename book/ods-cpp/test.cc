@@ -36,5 +36,17 @@ main(int argc, const char *argv[])
     std::cout << deq.pop() << std::endl;
     std::cout << deq.pop() << std::endl;
 
+    myods::dual_array_deque<int> dual_deq;
+    dual_deq.enqueue(1); dual_deq.enqueue(2); dual_deq.enqueue(3);
+    std::cout << "dual_array_deque: (as a queue)" << std::endl;
+    std::cout << dual_deq.dequeue() << std::endl;
+    std::cout << dual_deq.dequeue() << std::endl;
+    std::cout << dual_deq.dequeue() << std::endl;
+    dual_deq.push(1); dual_deq.push(2); dual_deq.push(3);
+    std::cout << "dual_array_deque: (as a stack)" << std::endl;
+    std::cout << dual_deq.pop() << std::endl;
+    std::cout << dual_deq.pop() << std::endl;
+    std::cout << dual_deq.pop() << std::endl;
+
     return 0;
 }

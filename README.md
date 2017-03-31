@@ -3,7 +3,7 @@ probset
 
 > *"The world is full of fascinating problems waiting to be solved."*
 
-~~Okay, im tryna deal with 'em fgs.~~
+~~Okay, im tryna deal wit 'em fgs.~~
 
 **probset**, namely *problem set*, is a randumb repository of my solutions for
 problem sets, quizzes, whatever. Sources include:
