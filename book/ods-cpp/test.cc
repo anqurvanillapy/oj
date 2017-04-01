@@ -5,21 +5,21 @@ main(int argc, const char *argv[])
 {
     myods::array_stack<int> s;
     s.push(1); s.push(2); s.push(3);
-    std::cout << "array_stack: " << std::endl;
+    std::cout << "array_stack:" << std::endl;
     std::cout << s.pop() << std::endl;
     std::cout << s.pop() << std::endl;
     std::cout << s.pop() << std::endl;
 
     myods::fast_array_stack<int> fs;
     fs.push(1); fs.push(2); fs.push(3);
-    std::cout << "fast_array_stack: " << std::endl;
+    std::cout << "fast_array_stack:" << std::endl;
     std::cout << fs.pop() << std::endl;
     std::cout << fs.pop() << std::endl;
     std::cout << fs.pop() << std::endl;
 
     myods::array_queue<int> q;
     q.enqueue(1); q.enqueue(2); q.enqueue(3);
-    std::cout << "array_queue: " << std::endl;
+    std::cout << "array_queue:" << std::endl;
     std::cout << q.dequeue() << std::endl;
     std::cout << q.dequeue() << std::endl;
     std::cout << q.dequeue() << std::endl;
@@ -47,6 +47,13 @@ main(int argc, const char *argv[])
     std::cout << dual_deq.pop() << std::endl;
     std::cout << dual_deq.pop() << std::endl;
     std::cout << dual_deq.pop() << std::endl;
+
+    myods::rootish_array_stack<int> rs;
+    rs.push(1); rs.push(2); rs.push(3);
+    std::cout << "rootish_array_stack:" << std::endl;
+    std::cout << rs.pop() << std::endl;
+    std::cout << rs.pop() << std::endl;
+    std::cout << rs.pop() << std::endl;
 
     return 0;
 }

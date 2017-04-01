@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <algorithm>
+#include <cmath>
 #include <cassert>
 
 namespace myods {
@@ -135,6 +136,32 @@ private:
     array_stack<T> back;
 };
 
+template <class T>
+class rootish_array_stack {
+public:
+    rootish_array_stack() : n(0) { /* nop */ }
+    ~rootish_array_stack() { /* nop */ }
+
+    constexpr int size() { return n; }
+
+    constexpr int itob(int i);
+    T get(int i);
+    T set(int i, T v);
+
+    void add(int i, T v);
+    T remove(int i);
+
+    void grow();
+    void shrink();
+
+    // XXX: push() and pop() not on the book.
+    inline void push(T v) { add(n, v); }
+    inline T pop() { return remove(std::max(n - 1, 0)); }
+private:
+    array_stack<T*> blocks;
+    int n;
+};
+
 } /* namespace myods */
 
 /// Template implementations.
@@ -144,5 +171,6 @@ private:
 #include "array_queue.tcc"
 #include "array_deque.tcc"
 #include "dual_array_deque.tcc"
+#include "rootish_array_stack.tcc"
 
 #endif /* !__MYODS__MYODS_H */
