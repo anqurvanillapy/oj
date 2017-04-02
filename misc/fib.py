@@ -7,12 +7,12 @@
     * Iterative, but a generator
 """
 
-from callcnt import counter
+from benchmark import calltime
 
 
-@counter
+@calltime
 def rfib(n):
-    """Recursive Fibonacci number function, unimproved."""
+    """Recursive Fibonacci number function, unimproved"""
     return rfib(n - 1) + rfib(n - 2) if n > 2 else 1
 
 
@@ -20,7 +20,7 @@ def rfib(n):
 kvs = {}
 
 
-@counter
+@calltime
 def rfib1(n):
     """Imporved recursive function"""
     if n > 2:
@@ -29,13 +29,13 @@ def rfib1(n):
         ret = rfib1(n - 1) + rfib1(n - 2)
         kvs[n] = ret
         return ret
-        
+
         # Interesting that it doesn't work.
         # return kvs.setdefault(n, rfib1(n - 1) + rfib1(n - 2))
     return 1
 
 
-@counter
+@calltime
 def ifib(n):
     """Iterative function"""
     a, b = 0, 1

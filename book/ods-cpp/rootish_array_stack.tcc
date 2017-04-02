@@ -4,7 +4,7 @@ template <class T>
 constexpr int
 rootish_array_stack<T>::itob(int i)
 {
-    // b is the smallest integer such that (b + 1)(b + 2)/2 ≥ i + 1.
+    // b is the smallest integer such that (b + 1)(b + 2)/2 >= i + 1.
     double _b = (-3.0 + std::sqrt(9 + 8 * i)) / 2.0;
     return (int)std::ceil(_b);
 }

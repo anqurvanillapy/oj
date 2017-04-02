@@ -1,9 +1,16 @@
+"""\
+    Benchmark
+    =========
+
+    Benchmarking methods for problem solutions in Python.
+"""
+
 from time import time
 
 
-def benchmark(func):
+def calltime(func):
     """Record elapsed time and function calls"""
-    print('now: {}...'.format(func.__doc__))
+    print('[benchmark] {}...'.format(func.__doc__))
     def wrap(*args, **kwargs):
         wrap.cnt += 1
         wrap._started = time() * 1000   # milliseconds
