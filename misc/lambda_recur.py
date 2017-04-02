@@ -21,7 +21,7 @@ def lrfact(n):
     # In fact, I have no ideas how to count the number of calls of those
     # lambda functions.
     return (lambda fn: lambda args: fn(fn, args)) \
-        (lambda f, x: 1 if x < 1 else x * f(f, x - 1)) \
+        (lambda f, x: f(f, x - 1) * x if x > 0 else 1) \
         (n)
 
 
