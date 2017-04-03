@@ -21,14 +21,14 @@ def lrfact(n):
     # In fact, I have no ideas how to count the number of calls of those
     # lambda functions.
     return (lambda fn: lambda args: fn(fn, args)) \
-        (lambda f, x: f(f, x - 1) * x if x > 0 else 1) \
+        (lambda f, x: f(f, x - 1) * x if x > 1 else 1) \
         (n)
 
 
 @calltime
 def rfact(n):
     """Recursive"""
-    return rfact(n - 1) * n if n > 0 else 1
+    return rfact(n - 1) * n if n > 1 else 1
 
 
 @calltime
