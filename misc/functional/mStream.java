@@ -3,7 +3,7 @@
  *  =======
  *
  *  A simple demo of java.util.stream that illustrates something like
- *  MapReduce pattern. Steram is a slight functional feature in Java 8 that
+ *  MapReduce pattern. Stream is a slight functional feature in Java 8 that
  *  stores immutable data and guarantees one-time access to them like a
  *  normal pipeline.
  *
@@ -12,7 +12,6 @@
  */
 
 import java.util.*;
-import java.util.stream.*;
 
 public class mStream {
     public static void main(String[] args) {
