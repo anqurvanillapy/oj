@@ -19,7 +19,7 @@ public:
     explicit array(int len);
     ~array() { /* nop */ }
 
-    constexpr int size() { return length; }
+    inline int size() { return length; }
 
     T& operator[](int i);
     array<T>& operator=(array<T> &a);
@@ -35,7 +35,7 @@ public:
     array_stack() : arr(1), top(0) { /* nop */ }
     ~array_stack() { /* nop */ }
 
-    constexpr int size() { return top; }
+    inline int size() { return top; }
 
     inline T const get(int i);
     inline T set(int i, T v);
@@ -73,7 +73,7 @@ public:
     array_queue() : arr(1), n(0), tail(0) { /* nop */ }
     ~array_queue() { /* nop */ }
 
-    constexpr int size() { return n; }
+    inline int size() { return n; }
 
     void add(T v);
     T remove();
@@ -116,7 +116,7 @@ public:
     dual_array_deque() { /* nop */ }
     ~dual_array_deque() { /* nop */ }
 
-    constexpr int size() { return front.size() + back.size(); }
+    inline int size() { return front.size() + back.size(); }
 
     const T get(int i);
     T set(int i, T v);
@@ -142,9 +142,9 @@ public:
     rootish_array_stack() : n(0) { /* nop */ }
     ~rootish_array_stack() { /* nop */ }
 
-    constexpr int size() { return n; }
+    inline int size() { return n; }
 
-    constexpr int itob(int i);
+    inline int itob(int i);
     T get(int i);
     T set(int i, T v);
 
@@ -160,6 +160,12 @@ public:
 private:
     array_stack<T*> blocks;
     int n;
+};
+
+/// Exercise 2.2
+template <class T>
+class random_queue : public array_queue<T> {
+    // TODO
 };
 
 } /* namespace myods */
