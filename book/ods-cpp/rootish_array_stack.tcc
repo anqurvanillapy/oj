@@ -1,7 +1,7 @@
 namespace myods {
 
 template <class T>
-constexpr int
+inline int
 rootish_array_stack<T>::itob(int i)
 {
     // b is the smallest integer such that (b + 1)(b + 2)/2 >= i + 1.

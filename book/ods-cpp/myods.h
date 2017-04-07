@@ -1,8 +1,8 @@
 #ifndef __MYODS__MYODS_H
 #define __MYODS__MYODS_H
 
-#include <iostream>
 #include <algorithm>
+#include <random>
 #include <cmath>
 #include <cassert>
 
@@ -37,7 +37,7 @@ public:
 
     inline int size() { return top; }
 
-    inline T const get(int i);
+    inline const T get(int i);
     inline T set(int i, T v);
 
     virtual void add(int i, T v);
@@ -78,10 +78,6 @@ public:
     void add(T v);
     T remove();
 
-    // XXX: enqueue() and dequeue() not on the book. Simply some aliases.
-    inline void enqueue(T v) { add(v); }
-    inline T dequeue() { return remove(); }
-
     void resize();
 protected:
     array<T> arr;
@@ -91,7 +87,10 @@ protected:
 template <class T>
 class array_deque : public array_queue<T> {
 public:
-    inline T const get(int i);
+    array_deque() { /* nop */ }
+    ~array_deque() { /* nop */ }
+
+    inline const T get(int i);
     inline T set(int i, T v);
 
     void add(int i, T v);
@@ -165,7 +164,23 @@ private:
 /// Exercise 2.2
 template <class T>
 class random_queue : public array_queue<T> {
-    // TODO
+public:
+    random_queue() : rd(), gen(rd()) { /* nop */ }
+    ~random_queue() { /* nop */ }
+
+    using array_queue<T>::add;
+    using array_queue<T>::remove;
+
+    void swap_tail();
+    inline void enqueue(T v) { add(v); }
+    inline T dequeue() { swap_tail(); return remove(); }
+private:
+    using array_queue<T>::arr;
+    using array_queue<T>::tail;
+    using array_queue<T>::n;
+
+    std::random_device rd;
+    std::mt19937 gen;
 };
 
 } /* namespace myods */
@@ -178,5 +193,6 @@ class random_queue : public array_queue<T> {
 #include "array_deque.tcc"
 #include "dual_array_deque.tcc"
 #include "rootish_array_stack.tcc"
+#include "random_queue.tcc"
 
 #endif /* !__MYODS__MYODS_H */

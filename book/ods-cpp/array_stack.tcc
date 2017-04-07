@@ -1,13 +1,13 @@
 namespace myods {
 
-template <class T> inline
-T const
+template <class T>
+inline const T
 array_stack<T>::get(int i)
 {
     return arr[i];  // already has bounds-checking
 }
 
-template <class T> inline
+template <class T>
 T
 array_stack<T>::set(int i, T v)
 {
@@ -51,7 +51,7 @@ array_stack<T>::resize()
 }   // array<T> a would be free for it is automatic
 
 /// XXX: Not on the book.
-template <class T> inline
+template <class T>
 void
 array_stack<T>::push(T v)
 {
@@ -59,7 +59,7 @@ array_stack<T>::push(T v)
 }
 
 /// XXX: Not on the book.
-template <class T> inline
+template <class T>
 T
 array_stack<T>::pop()
 {

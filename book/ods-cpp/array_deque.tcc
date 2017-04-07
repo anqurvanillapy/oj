@@ -1,7 +1,7 @@
 namespace myods {
 
 template <class T>
-T const
+inline const T
 array_deque<T>::get(int i)
 {
     return arr[(tail + i) % arr.size()];

@@ -1,4 +1,5 @@
 #include "myods.h"
+#include "iostream"
 
 int
 main(int argc, const char *argv[])
@@ -18,11 +19,11 @@ main(int argc, const char *argv[])
     std::cout << fs.pop() << std::endl;
 
     myods::array_queue<int> q;
-    q.enqueue(1); q.enqueue(2); q.enqueue(3);
+    q.add(1); q.add(2); q.add(3);
     std::cout << "array_queue:" << std::endl;
-    std::cout << q.dequeue() << std::endl;
-    std::cout << q.dequeue() << std::endl;
-    std::cout << q.dequeue() << std::endl;
+    std::cout << q.remove() << std::endl;
+    std::cout << q.remove() << std::endl;
+    std::cout << q.remove() << std::endl;
 
     myods::array_deque<int> deq;
     deq.enqueue(1); deq.enqueue(2); deq.enqueue(3);
@@ -54,6 +55,13 @@ main(int argc, const char *argv[])
     std::cout << rs.pop() << std::endl;
     std::cout << rs.pop() << std::endl;
     std::cout << rs.pop() << std::endl;
+
+    myods::random_queue<int> rq;
+    rq.enqueue(1); rq.enqueue(2); rq.enqueue(3);
+    std::cout << "random_queue (exercise 2.2):" << std::endl;
+    std::cout << rq.dequeue() << std::endl;
+    std::cout << rq.dequeue() << std::endl;
+    std::cout << rq.dequeue() << std::endl;
 
     return 0;
 }
