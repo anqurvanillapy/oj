@@ -23,7 +23,7 @@ public:
 
     T& operator[](int i);
     array<T>& operator=(array<T> &a);
-	T* operator+(int i);
+    T* operator+(int i);
 protected:
     T* arr;
     int length;
