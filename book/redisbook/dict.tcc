@@ -21,7 +21,7 @@ dict<K, V>::get(K k)
     std::reverse_iterator<typename std::vector<dict_entry<K, V>>::iterator> rit = entry.rbegin();
     for (; rit != entry.rend(); ++rit) if (rit->key == k) return rit->val;
 
-    throw "key error";
+    throw std::runtime_error("key error");
 }
 
 template <typename K, typename V>

@@ -11,13 +11,11 @@ template <typename K, typename V> class dict;
 template <typename K, typename V>
 class dict_entry {
 public:
+    dict_entry() { /* nop */ }
     dict_entry(K k, V v);
     ~dict_entry();
 
     friend dict<K, V>;
-
-    // Copy-constructor.
-    dict_entry(dict_entry<K, V> const& rhs) = default;
 private:
     K key;
     V val;
@@ -28,8 +26,6 @@ class dict_hashtable {
 public:
     dict_hashtable(size_t s);
     ~dict_hashtable();
-
-    void push(dict_entry<K, V>& node);
 
     friend dict<K, V>;
 private:
