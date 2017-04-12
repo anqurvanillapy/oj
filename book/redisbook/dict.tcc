@@ -1,29 +1,43 @@
 template <typename K, typename V>
-V
-dict<K, V>::get(const K& k)
+dict<K, V>::dict()
+: ht{4, 0}, rehashidx(-1), seed(rd())
+{
+    /* nop */
+}
+
+template <typename K, typename V>
+dict<K, V>::~dict()
+{
+    /* nop */
+}
+
+template <typename K, typename V>
+const V&
+dict<K, V>::get(K k)
 {
     unsigned index = hash_index(k);
+    std::vector<dict_entry<K, V>>& entry = ht[0].table[index];
+    
+    std::reverse_iterator<typename std::vector<dict_entry<K, V>>::iterator> rit = entry.rbegin();
+    for (; rit != entry.rend(); ++rit) if (rit->key == k) return rit->val;
 
-    return ht[0][index];
+    throw "key error";
 }
 
 template <typename K, typename V>
 void
-dict<K, V>::set(K k, T v)
+dict<K, V>::set(K k, V v)
 {
     unsigned index = hash_index(k);
-    // If it is not being incrementally rehashed.
-    if (rehashidx < 0) {
-    }
+    ht[0].table[index].emplace_back(k, v);
 }
 
 template <typename K, typename V>
 unsigned
-dict<K, V>::hash_index(const K& k)
+dict<K, V>::hash_index(K k)
 {
     __int128_t hash;
-    MurmurHash3_x64_128(k, sizeof(k), seed, &hash);
+    MurmurHash3_x64_128(static_cast<void *>(&k), sizeof(k), seed, &hash);
 
-    // TODO: check the rehashing.
     return hash & ht[0].sizemask;
 }

@@ -2,8 +2,11 @@
 #define __MYDICT_H
 
 #include <random>
+#include <iterator>
 
 #include "smhasher/src/MurmurHash3.h"
+
+template <typename K, typename V> class dict;
 
 template <typename K, typename V>
 class dict_entry {
@@ -11,8 +14,10 @@ public:
     dict_entry(K k, V v);
     ~dict_entry();
 
-    void push(dict_entry<K, V>& node);
-    inline void set(K k, V v);
+    friend dict<K, V>;
+
+    // Copy-constructor.
+    dict_entry(dict_entry<K, V> const& rhs) = default;
 private:
     K key;
     V val;
@@ -21,12 +26,14 @@ private:
 template <typename K, typename V>
 class dict_hashtable {
 public:
-    dict_hashtable();
+    dict_hashtable(size_t s);
     ~dict_hashtable();
 
-    inline dict_entry<K, V>& operator[](const unsigned& index);
+    void push(dict_entry<K, V>& node);
+
+    friend dict<K, V>;
 private:
-    std::vector<dict_entry<K, V>>* table;
+    std::vector<std::vector<dict_entry<K, V>>> table;
     unsigned long size;
     unsigned long sizemask;
     unsigned long used;
@@ -38,10 +45,10 @@ public:
     dict();
     ~dict();
 
-    V get(const K& key);
+    const V& get(K key);
     void set(K key, V val);
 private:
-    unsigned hash_index(const K& key);
+    unsigned hash_index(K k);
 
     dict_hashtable<K, V> ht[2];
     int rehashidx;
