@@ -17,8 +17,10 @@ dict<K, V>::get(K k)
 {
     unsigned index = hash_index(k);
     std::vector<dict_entry<K, V>>& entry = ht[0].table[index];
-    
-    std::reverse_iterator<typename std::vector<dict_entry<K, V>>::iterator> rit = entry.rbegin();
+
+    std::reverse_iterator<typename std::vector<dict_entry<K, V>>::iterator> rit
+        = entry.rbegin();
+
     for (; rit != entry.rend(); ++rit) if (rit->key == k) return rit->val;
 
     throw std::runtime_error("key error");
@@ -29,7 +31,9 @@ void
 dict<K, V>::set(K k, V v)
 {
     unsigned index = hash_index(k);
+
     ht[0].table[index].emplace_back(k, v);
+    ht[0].used++;
 }
 
 template <typename K, typename V>
