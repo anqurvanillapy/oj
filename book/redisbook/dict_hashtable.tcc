@@ -1,5 +1,5 @@
 template <typename K, typename V>
-dict_hashtable<K, V>::dict_hashtable(size_t s)
+dict_hashtable<K, V>::dict_hashtable(unsigned s)
 : table(s, std::vector<dict_entry<K, V>>(0)), size(s), sizemask(s - 1), used(0)
 {
     /* nop */
