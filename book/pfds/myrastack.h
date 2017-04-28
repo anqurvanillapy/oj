@@ -8,10 +8,10 @@ template <typename T> class rastack;
 template <typename T>
 class rastack_node {
 public:
-    rastack_node(rastack_node<T>* n,
-                 rastack_node<T>* l,
-                 rastack_node<T>* r,
-                 const T& v)
+    explicit rastack_node(rastack_node<T>* n,
+                          rastack_node<T>* l,
+                          rastack_node<T>* r,
+                          const T& v)
         : next(n), left(l), right(r), val(v)
     {
         size = left == nullptr || right == nullptr ? 1

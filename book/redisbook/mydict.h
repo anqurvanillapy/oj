@@ -24,6 +24,8 @@ private:
 template <typename K, typename V>
 class dict_hashtable {
 public:
+    // `explicit' constructor is unnecessary here, while it is better to have it
+    // in the top-level class exposed to the users.
     dict_hashtable(size_t s);
     ~dict_hashtable();
 
