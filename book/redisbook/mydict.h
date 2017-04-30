@@ -36,7 +36,12 @@ public:
 private:
     std::vector<std::vector<dict_entry<K, V>>> table;
     // No need to use std::size_t, which is a constant returned by operator
-    // `sizeof' (BTW, sizeof cannot be overloaded).
+    // `sizeof'.
+    //
+    // NOTE: `sizeof' cannot be overloaded.  std::size_t guarantees to express
+    // the maximum size of any object (including any array), so it is natural
+    // when comparing in the loop condition.  Also, *not* using std::size_t when
+    // it should can lead to security bugs (always use std::size_t for sizes!).
     unsigned long size;
     unsigned long sizemask;
     unsigned long used;
