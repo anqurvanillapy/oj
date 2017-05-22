@@ -23,12 +23,12 @@ let eh2 = _ => 0
 let eh3 = _ => NaN
 
 // Run the tests.
-assert([elseFn, thenFn][!!ok0()*1]() === 'then')
-assert([elseFn, thenFn][!!ok1()*1]() === 'then')
-assert([elseFn, thenFn][!!ok2()*1]() === 'then')
-assert([elseFn, thenFn][!!eh0()*1]() === 'else')
-assert([elseFn, thenFn][!!eh1()*1]() === 'else')
-assert([elseFn, thenFn][!!eh2()*1]() === 'else')
-assert([elseFn, thenFn][!!eh3()*1]() === 'else')
+assert([elseFn, thenFn][!!ok0() * 1]() === 'then')
+assert([elseFn, thenFn][!!ok1() * 1]() === 'then')
+assert([elseFn, thenFn][!!ok2() * 1]() === 'then')
+assert([elseFn, thenFn][!!eh0() * 1]() === 'else')
+assert([elseFn, thenFn][!!eh1() * 1]() === 'else')
+assert([elseFn, thenFn][!!eh2() * 1]() === 'else')
+assert([elseFn, thenFn][!!eh3() * 1]() === 'else')
 
 console.log('that\'s it!')
