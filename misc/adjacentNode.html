@@ -1,0 +1,28 @@
+<!--
+  Adjacent node
+  =============
+
+  Originally from this video: https://youtu.be/vAgKZoGIvqs?t=41m25s  
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+<script>
+  document.body.innerHTML = '<p>First</p>'
+  document.body.innerHTML += '<p>Second</p>'
+  document.body.innerHTML += '<p>Third</p>'
+  // Equivalent to these.
+  // document.body.innerHTML = '<p>First</p>'
+  // document.body.innerHTML = document.body.innerHTML + '<p>Second</p>'
+  // document.body.innerHTML = document.body.innerHTML + '<p>Third</p>'
+  // which creates 6 nodes in <body>!
+
+  // Use insertAdjacentHTML instead!
+  document.body.insertAdjacentHTML('beforeend', '<p>Fourth</p>')
+</script>
+</body>
+</html>

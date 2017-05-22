@@ -1,3 +1,12 @@
+/**
+ *  Weird array index
+ *  =================
+ *
+ *  Originally from Google Developers: How Well Do You Know the Web? (Google I/O
+ *  2017), presented by Jake Archibald and Paul Lewis.
+ *  YouTube: https://youtu.be/vAgKZoGIvqs?t=39m32s
+ */
+
 const arr = new Int8Array(100)
 
 // '.9' is not a canonical representation of a number.
