@@ -13,7 +13,7 @@
  *  frequency), the least recently used key would be evicted.
  *
  *  - Follow up:
-        + Could you do both operations in O(1) time complexity?
+ *      + Could you do both operations in O(1) time complexity?
  */
 
 import java.util.*;
