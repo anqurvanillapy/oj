@@ -17,18 +17,20 @@ class Base {
 
 class Orphan extends Base {
   constructor () {
+    const that = new.target.prototype
+    that.foo = 69
     console.log(new.target) // => [Function: Orphan]
     return Object.create(new.target.prototype)
   }
 
   bar () {
-    console.log(this.foo) // => undefined
+    console.log(this.foo) // => 69
   }
 }
 
 class Derived extends Base {
   constructor () {
-    console.log(new.target) // => [Function: Orphan]
+    console.log(new.target) // => [Function: Derived]
     super()
   }
 
