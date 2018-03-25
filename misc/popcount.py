@@ -26,10 +26,10 @@ def popcount0(n):
     return count
 
 
-assert popcount0(N0) == 8
-popcount0.done()
-assert popcount0(N1) == 32
-popcount0.done()
+with popcount0(N0) as ret:
+    assert ret == 8
+with popcount0(N1) as ret:
+    assert ret == 32
 
 
 @trek()
@@ -42,10 +42,10 @@ def popcount1(n):
     return count
 
 
-assert popcount1(N0) == 8
-popcount1.done()
-assert popcount1(N1) == 32
-popcount1.done()
+with popcount1(N0) as ret:
+    assert ret == 8
+with popcount1(N1) as ret:
+    assert ret == 32
 
 
 @trek()
@@ -60,7 +60,7 @@ def popcount2(n):
     return n
 
 
-assert popcount2(N0) == 8
-popcount2.done()
-assert popcount2(N1) == 32
-popcount2.done()
+with popcount2(N0) as ret:
+    assert ret == 8
+with popcount2(N1) as ret:
+    assert ret == 32

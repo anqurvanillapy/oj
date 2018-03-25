@@ -3,7 +3,7 @@
 
     * Recursive
     * Recursive, but improved
-    * Recursive, but with functools.lru_cache 
+    * Recursive, but with functools.lru_cache
     * Iterative
     * Iterative, but a generator
 """
