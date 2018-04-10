@@ -1,0 +1,15 @@
+<html>
+<head>
+  <title>beforeunload</title>
+</head>
+<body>
+<script>
+// `msg' may not be displayed in modern browsers.
+window.onbeforeunload = e => {
+  const msg = 'plz dont go'
+  e.returnValue = msg
+  return msg
+}
+</script>
+</body>
+</html>
