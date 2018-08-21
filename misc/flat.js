@@ -2,7 +2,8 @@
  *  Flattening
  *  ==========
  *
- *  Single level array flattening using `map` and `reduce`.
+ *  Single level array flattening using `map` and `reduce`.  E.g. for appending
+ *  `<hr />`s to an array of VDOM components while following every element.
  */
 
 console.log(
