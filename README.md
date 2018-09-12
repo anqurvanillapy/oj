@@ -15,6 +15,9 @@ problem sets, quizzes, whatever. Sources include:
 - PoC or gtfo, yep I mean literally
 - etc. They've been dumb enough
 
+**AAMOF**, the `misc` directory has become the playground of my shitty Python,
+Java, JavaScript snippets.
+
 License
 -------
 
